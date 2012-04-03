@@ -1,5 +1,35 @@
 <?php
 
-function jquery_week_calendar_menu(){
+define('JQUERY_WEEK_CALENDAR_PATH', 'sites/all/libraries/jquery-week-calendar');
 
+/**
+ * Implements hook_permission().
+ */
+function jquery_week_calendar_permission(){
+  return array(
+    'administer jquery week calendar' => array(
+      'title' => t('Administer Jquery Week Calendar'), 
+      'description' => t('Perform administration tasks for Jquery Week Calendar module.'),
+    ),
+    'use jquery week calendar' => array(
+      'title' => t('Use Jquery Week Calendar to Insert/Edit Nodes'), 
+      'description' => t('Use Jquery Week Calendar module to create/edit nodes.'),
+    ),
+    'view jquery week calendar' => array(
+      'title' => t('Use Jquery Week Calendar to View Nodes'), 
+      'description' => t('Use Jquery Week Calendar module to view nodes.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function jquery_week_calendar_menu(){
+  $items['admin/config/user-interface/jquery-week-calendar'] = array(
+    'title' => 'Jquery Week Calendar Settings',
+    'page callback' => 'jquery_week_calendar_settings',
+    'access arguments' => array('administer jquery week calendar')
+  );
+  return $items;
 }

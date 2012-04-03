@@ -1,0 +1,7 @@
+name = Jquery Week Calendar
+description = Wrapper module for the Jquery Week Calendar library
+core = 7.x
+package = User Interface
+dependencies[] = library
+dependencies[] = date
+configure = admin/config/user-interface/jquery-week-calendar
