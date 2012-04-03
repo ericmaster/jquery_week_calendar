@@ -29,7 +29,44 @@ function jquery_week_calendar_menu(){
   $items['admin/config/user-interface/jquery-week-calendar'] = array(
     'title' => 'Jquery Week Calendar Settings',
     'page callback' => 'jquery_week_calendar_settings',
+    'access arguments' => array('administer jquery week calendar'),
+    'file' => 'jquery_week_calendar.admin.inc'
+  );
+  $items['admin/config/user-interface/jquery-week-calendar/list'] = array(
+    'title' => 'Jquery Week Calendar Sample',
+    'page callback' => 'jquery_week_calendar_settings',
+    'access arguments' => array('administer jquery week calendar')
+  );
+  $items['admin/config/user-interface/jquery-week-calendar/add'] = array(
+    'title' => 'Jquery Week Calendar Sample',
+    'page callback' => 'jquery_week_calendar_settings',
+    'access arguments' => array('administer jquery week calendar')
+  );
+  $items['admin/config/user-interface/jquery-week-calendar/sample'] = array(
+    'title' => 'Jquery Week Calendar Sample',
+    'page callback' => 'jquery_week_calendar_settings',
     'access arguments' => array('administer jquery week calendar')
   );
   return $items;
+}
+
+/***** UTILITY FUNCTIONS *****/
+
+/**
+ * Retrieves the list of available profiles
+ */
+function jquery_week_calendar_get_profiles(){
+  
+}
+
+function jquery_week_calendar_load_profile($pid = NULL){
+  $profile = new stdClass();
+  if($pid = NULL){
+    
+  }
+  return $profile;
+}
+
+function jquery_week_calendar_delete_profile($pid = NULL){
+  
 }
